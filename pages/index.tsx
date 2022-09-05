@@ -11,9 +11,11 @@ const buildspaceCollection = "0x3CD266509D127d0Eac42f4474F57D0526804b44e"
 
 const Home: NextPage = () => {
   const [wallet, setWallet] = useState("");
-  const [NFTs, setNFTs] = useState([]);
+  const [learnWeb3NFTs, setLearnWeb3NFTs] = useState([]);
+  const [buildSpaceNFTs, setBuildSpaceNFTs] = useState([]);
 
-  const fetchNFTs = async () => {
+
+  const fetchLearnWeb3NFTs = async () => {
     let nfts;
     console.log("fetching nfts");
     // Setup request options:
@@ -28,7 +30,26 @@ const Home: NextPage = () => {
 
     if(nfts) {
       console.log(nfts)
-      setNFTs(nfts.ownedNFT);
+      setLearnWeb3NFTs(nfts.ownedNFT);
+    }
+  }
+
+  const fetchBuildSpaceNFTs = async () => {
+    let nfts;
+    console.log("fetching nfts");
+    // Setup request options:
+    var requestOptions = {
+      method: 'GET',
+    };
+    const baseURL = `https://polygon-mainnet.g.alchemyapi.io/nft/v2/${alchemyAPIKey}/getNFTs`;
+    
+    const fetchURL = `${baseURL}?owner=${wallet}&contractAddresses%5B%5D=${buildspaceCollection}`
+
+    nfts = await fetch(fetchURL, requestOptions).then(data => data.json())
+
+    if(nfts) {
+      console.log(nfts)
+      setBuildSpaceNFTs(nfts.ownedNFT);
     }
   }
 
@@ -46,7 +67,8 @@ const Home: NextPage = () => {
       });
 
       setWallet(accounts[0]);
-      fetchNFTs();
+      fetchLearnWeb3NFTs();
+      fetchBuildSpaceNFTs();
       console.log(accounts[0]);
     } catch (error) {
       console.log(error);
