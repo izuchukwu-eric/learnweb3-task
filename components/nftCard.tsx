@@ -46,12 +46,11 @@ function NFTCard({ learnWeb3NFTs, buildSpaceNFTs }: Props) {
                                     {
                                         nft.media[0].gateway.includes("mp4") ?
                                             <video 
+                                                src={nft.media[0].gateway}
                                                 className="rounded-xl h-80 w-80"
                                                 autoPlay
                                                 controls
-                                            >
-                                                <source src={nft.media[0].gateway} type="video/mp4" />
-                                            </video>
+                                            />
                                         :
                                         <Image
                                             src={nft.media[0].gateway}
