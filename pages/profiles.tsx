@@ -40,7 +40,7 @@ function profiles() {
 
             {/* right */}
             <div className="flex items-center justify-end space-x-4 md:mr-28 text-gray-500">
-                <p className="hidden md:inline-flex text-black text-base font-semibold cursor-pointer">Cart</p>
+                <div className="md:inline-flex text-black text-base font-semibold cursor-pointer">{`${wallet.substr(0, 5)}...${wallet.substr(wallet.length - 4)}`}</div>
             </div>
         </header>
 
