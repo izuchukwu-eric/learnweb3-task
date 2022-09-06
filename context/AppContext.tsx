@@ -15,6 +15,9 @@ interface Props {
     children: ReactElement;
   }
 
+interface window {
+  ethereum: any;
+}
 const AppContext = createContext<AppContextType>({} as AppContextType)
 
 const alchemyAPIKey = process.env.NEXT_PUBLIC_ALCHEMY_API_KEY;
@@ -81,7 +84,7 @@ export const AppContextProvider = ({ children }: Props  ) => {
      */
     const connectWallet = async () => {
         try {
-          const {ethereum} = window;
+          const {ethereum} = window as any;
           console.log(ethereum)
     
           if (!ethereum) {
@@ -108,7 +111,7 @@ export const AppContextProvider = ({ children }: Props  ) => {
       */
      const checkIfWalletIsConnected = async () => {
       try {
-          const {ethereum} = window;
+          const {ethereum} = window as any;
           if(!ethereum) return alert("Please install metamask");
   
           const accounts = await ethereum.request({method: "eth_accounts"});
