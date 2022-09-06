@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
+import ArrowUpRightIcon from '@heroicons/react/20/solid/ArrowUpRightIcon';
 
 interface Props {
     learnWeb3NFTs: any;
@@ -28,9 +29,12 @@ function NFTCard({ learnWeb3NFTs, buildSpaceNFTs }: Props) {
                                     <p className="mt-1 text-base font-semibold text-black">Id: {nft.id.tokenId.substr(nft.id.tokenId.length -4)}</p>
                                     <p className="mt-1 text-base font-semibold text-black">{nft.title}</p>
                                     <p className="mt-1 text-base font-semibold text-black">{nft.description?.substr(0, 150)}</p>
-                                    <a className="mt-1 text-base font-semibold text-gray-500" target={"_blank"} href={`https://polygonscan.com/address/${nft.contract.address}`}>
-                                        View on polygon scan
-                                    </a>
+                                    <div className='flex mt-1 items-center'>
+                                        <a className="text-base font-semibold text-gray-500" target={"_blank"} href={`https://polygonscan.com/address/${nft.contract.address}`}>
+                                            View on polygon scan
+                                        </a>
+                                        <ArrowUpRightIcon className='h-5 w-5 text-gray-500 cursor-pointer' />
+                                    </div>
                                 </div>
                             )
                         )
@@ -62,9 +66,12 @@ function NFTCard({ learnWeb3NFTs, buildSpaceNFTs }: Props) {
                                 </div>
                                 <p className="mt-1 text-base font-semibold text-black">Id: {nft.id.tokenId.substr(nft.id.tokenId.length -4)}</p>
                                 <p className="mt-1 text-base font-semibold text-black">{nft.description?.substr(0, 150)}</p>
-                                <a className="mt-1 text-base font-semibold text-gray-500" target={"_blank"} href={`https://polygonscan.com/address/${nft.contract.address}`}>
-                                    View on polygon scan
-                                </a>
+                                <div className='flex mt-1 items-center'>
+                                    <a className="text-base font-semibold text-gray-500" target={"_blank"} href={`https://polygonscan.com/address/${nft.contract.address}`}>
+                                        View on polygon scan
+                                    </a>
+                                    <ArrowUpRightIcon className='h-5 w-5 text-gray-500 cursor-pointer' />
+                                </div>
                             </div>
                         )
                     )
