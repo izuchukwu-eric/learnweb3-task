@@ -4,11 +4,11 @@ import { useRouter } from "next/dist/client/router";
 
 interface AppContextType {
     connectWallet: any;
-    learnWeb3NFTs: any;
-    buildSpaceNFTs: any;
+    learnWeb3NFTs: string[];
+    buildSpaceNFTs: string[];
     fetchLearnWeb3NFTs: any;
     fetchBuildSpaceNFTs: any;
-    wallet: any
+    wallet: string
 }
 
 interface Props {
