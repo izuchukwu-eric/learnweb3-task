@@ -43,12 +43,23 @@ function NFTCard({ learnWeb3NFTs, buildSpaceNFTs }: Props) {
                             (
                             <div key={i + 1}>
                                 <div className='relative h-80 w-80'>
-                                    <Image
-                                        src={nft.media[0].gateway}
-                                        alt="buildSpaceNFTs"
-                                        layout='fill'
-                                        className="rounded-xl "
-                                    />
+                                    {
+                                        nft.media[0].gateway.includes("mp4") ?
+                                            <video 
+                                                src={nft.media.gateway}
+                                                className="rounded-xl h-80 w-80"
+                                                autoPlay
+                                                controls
+                                                muted
+                                            />
+                                        :
+                                        <Image
+                                            src={nft.media[0].gateway}
+                                            alt="buildSpaceNFTs"
+                                            layout='fill'
+                                            className="rounded-xl "
+                                        />
+                                    }
                                 </div>
                                 <p className="mt-1 text-base font-semibold text-black">Id: {nft.id.tokenId.substr(nft.id.tokenId.length -4)}</p>
                                 <p className="mt-1 text-base font-semibold text-black">{nft.description?.substr(0, 150)}</p>
