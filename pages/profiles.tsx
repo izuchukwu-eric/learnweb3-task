@@ -9,7 +9,6 @@ import { useAppContext } from '../context/AppContext';
 function profiles() {
     const { learnWeb3NFTs, buildSpaceNFTs, wallet, fetchBuildSpaceNFTs, fetchLearnWeb3NFTs } = useAppContext();
     const [show, handleShow] = useState(false);
-    const [connectedWallet, setConnectedWallet] = useState("");
     
     useEffect(() => {
         window.addEventListener("scroll", () => {
@@ -19,7 +18,6 @@ function profiles() {
         });
         fetchLearnWeb3NFTs();
         fetchBuildSpaceNFTs();
-        setConnectedWallet(wallet);
       }, []);
 
   return (
@@ -42,7 +40,7 @@ function profiles() {
 
             {/* right */}
             <div className="flex items-center justify-end space-x-4 md:mr-28 text-gray-500">
-                <div className="text-black text-base font-semibold cursor-pointer">{`${connectedWallet.substr(0, 5)}...${connectedWallet.substr(connectedWallet.length - 4)}`}</div>
+                <div className="text-black text-base font-semibold cursor-pointer">{`${wallet.substr(0, 5)}...${wallet.substr(wallet.length - 4)}`}</div>
             </div>
         </header>
 

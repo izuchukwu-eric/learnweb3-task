@@ -1,4 +1,4 @@
-import React, { useState, ReactElement, createContext, useContext } from 'react'
+import React, { useState, ReactElement, createContext, useContext, useEffect } from 'react'
 import { useRouter } from "next/dist/client/router";
 
 
@@ -27,7 +27,14 @@ export const AppContextProvider = ({ children }: Props  ) => {
     const [wallet, setWallet] = useState<string>("");
     const [learnWeb3NFTs, setLearnWeb3NFTs] = useState<string[]>([]);
     const [buildSpaceNFTs, setBuildSpaceNFTs] = useState<string[]>([]);
+    useEffect(() => {
+      checkIfWalletIsConnected()
+    }, [])
 
+
+    /**
+     * @dev to fetch learnWeb3NFTs owned by the address
+     */
     const fetchLearnWeb3NFTs = async () => {
         let learnWeb3NFTs;
         console.log("fetching nfts");
@@ -47,6 +54,9 @@ export const AppContextProvider = ({ children }: Props  ) => {
         }
       }
 
+    /**
+     * @dev to fetch buildSpaceNFTs owned by the address
+     */
     const fetchBuildSpaceNFTs = async () => {
         let buildSpaceNFTs;
         console.log("fetching nfts");
@@ -66,6 +76,9 @@ export const AppContextProvider = ({ children }: Props  ) => {
         }
     }  
 
+    /**
+     * @dev to connect users wallet and route user to profile page
+     */
     const connectWallet = async () => {
         try {
           const {ethereum} = window;
@@ -80,8 +93,6 @@ export const AppContextProvider = ({ children }: Props  ) => {
           });
     
           setWallet(accounts[0]);
-          // fetchLearnWeb3NFTs();
-          // fetchBuildSpaceNFTs();
          
           router.push({
             pathname: "/profiles"
@@ -91,6 +102,30 @@ export const AppContextProvider = ({ children }: Props  ) => {
           console.log(error);
         }
       }
+
+     /**
+      * @dev check if users wallet is connected
+      */
+     const checkIfWalletIsConnected = async () => {
+      try {
+          const {ethereum} = window;
+          if(!ethereum) return alert("Please install metamask");
+  
+          const accounts = await ethereum.request({method: "eth_accounts"});
+          
+          if(accounts.length) {
+              setWallet(accounts[0]);
+              
+          } else {
+              console.log("No accounts Found")
+          }
+          
+      } catch (error) {
+          console.log(error)
+
+          throw new Error("No ethereum object.")
+      }
+  }
 
   return (
     <AppContext.Provider value={{connectWallet, fetchLearnWeb3NFTs, fetchBuildSpaceNFTs, learnWeb3NFTs, buildSpaceNFTs, wallet}} >
