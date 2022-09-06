@@ -6,6 +6,8 @@ interface AppContextType {
     connectWallet: any;
     learnWeb3NFTs: any;
     buildSpaceNFTs: any;
+    fetchLearnWeb3NFTs: any;
+    fetchBuildSpaceNFTs: any;
     wallet: any
 }
 
@@ -78,11 +80,11 @@ export const AppContextProvider = ({ children }: Props  ) => {
           });
     
           setWallet(accounts[0]);
-          fetchLearnWeb3NFTs();
-          fetchBuildSpaceNFTs();
+          // fetchLearnWeb3NFTs();
+          // fetchBuildSpaceNFTs();
          
           router.push({
-            pathname: "/profiles",
+            pathname: "/profiles"
           });
           console.log(accounts[0]);
         } catch (error) {
@@ -91,7 +93,7 @@ export const AppContextProvider = ({ children }: Props  ) => {
       }
 
   return (
-    <AppContext.Provider value={{connectWallet, learnWeb3NFTs, buildSpaceNFTs, wallet}} >
+    <AppContext.Provider value={{connectWallet, fetchLearnWeb3NFTs, fetchBuildSpaceNFTs, learnWeb3NFTs, buildSpaceNFTs, wallet}} >
         {children}
     </AppContext.Provider>
   )

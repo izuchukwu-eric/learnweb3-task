@@ -5,12 +5,10 @@ import ArrowUpRightIcon from '@heroicons/react/20/solid/ArrowUpRightIcon';
 interface Props {
     learnWeb3NFTs: any;
     buildSpaceNFTs: any
-
 }
 
 function NFTCard({ learnWeb3NFTs, buildSpaceNFTs }: Props) {
-    console.log(learnWeb3NFTs)
-    console.log(buildSpaceNFTs)
+    
   return (
         <div className="mx-auto max-w-2xl py-16 px-8 lg:max-w-5xl lg:px-2 sm:px-4">
                 <div className="group grid grid-cols-1 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-3 md:gap-y-0 lg:gap-x-8">
