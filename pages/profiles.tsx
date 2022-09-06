@@ -9,9 +9,7 @@ import { useAppContext } from '../context/AppContext';
 function profiles() {
     const { learnWeb3NFTs, buildSpaceNFTs, wallet } = useAppContext();
     const [show, handleShow] = useState(false);
-    console.log(learnWeb3NFTs)
-    console.log(buildSpaceNFTs)
-    console.log(wallet)
+    
     useEffect(() => {
         window.addEventListener("scroll", () => {
             if(window.scrollY > 100) {
