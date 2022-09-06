@@ -6,7 +6,7 @@ import NFTCard from "../components/NFTCard"
 import { useAppContext } from '../context/AppContext';
 
 
-function profiles() {
+function Profiles() {
     const { learnWeb3NFTs, buildSpaceNFTs, wallet, fetchBuildSpaceNFTs, fetchLearnWeb3NFTs } = useAppContext();
     const [show, handleShow] = useState(false);
     
@@ -33,8 +33,6 @@ function profiles() {
                     layout="fill"
                     objectFit="contain"
                     objectPosition="left"
-                    height={40}
-                    width={40}
                 />
             </div>
 
@@ -52,4 +50,4 @@ function profiles() {
   )
 }
 
-export default profiles
+export default Profiles

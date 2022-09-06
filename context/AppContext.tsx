@@ -15,9 +15,7 @@ interface Props {
     children: ReactElement;
   }
 
-interface window {
-  ethereum: any;
-}
+
 const AppContext = createContext<AppContextType>({} as AppContextType)
 
 const alchemyAPIKey = process.env.NEXT_PUBLIC_ALCHEMY_API_KEY;
@@ -40,7 +38,7 @@ export const AppContextProvider = ({ children }: Props  ) => {
      */
     const fetchLearnWeb3NFTs = async () => {
         let learnWeb3NFTs;
-        console.log("fetching nfts");
+        console.log("fetching learnWeb3 nfts");
         // Setup request options:
         var requestOptions = {
           method: 'GET',
@@ -62,7 +60,7 @@ export const AppContextProvider = ({ children }: Props  ) => {
      */
     const fetchBuildSpaceNFTs = async () => {
         let buildSpaceNFTs;
-        console.log("fetching nfts");
+        console.log("fetching buildspace nfts");
         // Setup request options:
         var requestOptions = {
             method: 'GET',
