@@ -11,8 +11,8 @@ function NFTCard({ learnWeb3NFTs, buildSpaceNFTs }: Props) {
     console.log(learnWeb3NFTs)
     console.log(buildSpaceNFTs)
   return (
-        <div className="mx-auto max-w-5xl py-16">
-                <div className="group grid grid-cols-1 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-3 md:gap-y-0 lg:gap-x-8 space-x-3">
+        <div className="mx-auto max-w-2xl py-16 px-8 lg:max-w-5xl lg:px-2 sm:px-4">
+                <div className="group grid grid-cols-1 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-3 md:gap-y-0 lg:gap-x-8">
                     {
                         learnWeb3NFTs && learnWeb3NFTs.map((nft: any, i: any) => 
                              (
@@ -24,7 +24,6 @@ function NFTCard({ learnWeb3NFTs, buildSpaceNFTs }: Props) {
                                             layout='fill'
                                             className="rounded-xl"
                                         />
-
                                     </div>
                                     <p className="mt-1 text-base font-semibold text-black">Id: {nft.id.tokenId.substr(nft.id.tokenId.length -4)}</p>
                                     <p className="mt-1 text-base font-semibold text-black">{nft.title}</p>
@@ -38,9 +37,9 @@ function NFTCard({ learnWeb3NFTs, buildSpaceNFTs }: Props) {
                     }
             </div>
 
-            <div className="group grid grid-cols-1 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-3 md:gap-y-14 lg:gap-x-8 space-x-3 mt-14">
+            <div className="group grid grid-cols-1 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-3 md:gap-y-14 lg:gap-x-8 mt-14">
                 {
-                    buildSpaceNFTs.length && buildSpaceNFTs.map((nft: any, i: any) => 
+                    buildSpaceNFTs && buildSpaceNFTs.map((nft: any, i: any) => 
                             (
                             <div key={i + 1}>
                                 <div className='relative h-80 w-80'>
