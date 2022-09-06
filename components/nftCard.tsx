@@ -12,7 +12,7 @@ function NFTCard({ learnWeb3NFTs, buildSpaceNFTs }: Props) {
     console.log(buildSpaceNFTs)
   return (
         <div className="mx-auto max-w-5xl py-16">
-                <div className="group flex flex-row space-x-3">
+                <div className="group grid grid-cols-1 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-3 md:gap-y-0 lg:gap-x-8 space-x-3">
                     {
                         learnWeb3NFTs && learnWeb3NFTs.map((nft: any, i: any) => 
                              (
@@ -38,7 +38,7 @@ function NFTCard({ learnWeb3NFTs, buildSpaceNFTs }: Props) {
                     }
             </div>
 
-            <div className="group flex flex-row space-x-3 mt-14">
+            <div className="group grid grid-cols-1 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-3 md:gap-y-14 lg:gap-x-8 space-x-3 mt-14">
                 {
                     buildSpaceNFTs.length && buildSpaceNFTs.map((nft: any, i: any) => 
                             (

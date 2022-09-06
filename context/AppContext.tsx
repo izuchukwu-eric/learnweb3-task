@@ -80,11 +80,10 @@ export const AppContextProvider = ({ children }: Props  ) => {
           setWallet(accounts[0]);
           fetchLearnWeb3NFTs();
           fetchBuildSpaceNFTs();
-          if(learnWeb3NFTs && buildSpaceNFTs) {
-        }
-        router.push({
-          pathname: "/profiles",
-        });
+         
+          router.push({
+            pathname: "/profiles",
+          });
           console.log(accounts[0]);
         } catch (error) {
           console.log(error);
@@ -98,6 +97,5 @@ export const AppContextProvider = ({ children }: Props  ) => {
   )
 }
 
-// export default AppContextWrapper;
 
 export const useAppContext = () => useContext(AppContext)
