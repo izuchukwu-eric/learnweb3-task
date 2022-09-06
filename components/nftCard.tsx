@@ -28,7 +28,7 @@ function NFTCard({ learnWeb3NFTs, buildSpaceNFTs }: Props) {
                                     <p className="mt-1 text-base font-semibold text-black">{nft.title}</p>
                                     <p className="mt-1 text-base font-semibold text-black">{nft.description?.substr(0, 150)}</p>
                                     <div className='flex mt-1 items-center'>
-                                        <a className="text-base font-semibold text-gray-500" target={"_blank"} href={`https://polygonscan.com/address/${nft.contract.address}`}>
+                                        <a className="text-base font-semibold text-gray-500" target={"_blank"} rel="noreferrer" href={`https://polygonscan.com/address/${nft.contract.address}`}>
                                             View on polygon scan
                                         </a>
                                         <ArrowUpRightIcon className='h-5 w-5 text-gray-500 cursor-pointer' />
@@ -65,7 +65,7 @@ function NFTCard({ learnWeb3NFTs, buildSpaceNFTs }: Props) {
                                 <p className="mt-1 text-base font-semibold text-black">Id: {nft.id.tokenId.substr(nft.id.tokenId.length -4)}</p>
                                 <p className="mt-1 text-base font-semibold text-black">{nft.description?.substr(0, 150)}</p>
                                 <div className='flex mt-1 items-center'>
-                                    <a className="text-base font-semibold text-gray-500" target={"_blank"} href={`https://polygonscan.com/address/${nft.contract.address}`}>
+                                    <a className="text-base font-semibold text-gray-500" target={"_blank"} rel="noreferrer" href={`https://polygonscan.com/address/${nft.contract.address}`}>
                                         View on polygon scan
                                     </a>
                                     <ArrowUpRightIcon className='h-5 w-5 text-gray-500 cursor-pointer' />

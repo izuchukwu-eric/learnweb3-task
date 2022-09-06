@@ -18,7 +18,7 @@ function Profiles() {
         });
         fetchLearnWeb3NFTs();
         fetchBuildSpaceNFTs();
-      }, []);
+      }, [fetchBuildSpaceNFTs, buildSpaceNFTs]);
 
   return (
     <div className='bg-white'>
