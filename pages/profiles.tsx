@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Logo from "../assets/logo-blue.png";
 import Image from 'next/image';
 import router from 'next/router';
-import NFTCard from "../components/NFTCard"
+import NFTCard from "../components/NFTCard";
+import Loader from '../components/Loader';
 import { useAppContext } from '../context/AppContext';
 
 
@@ -43,8 +44,10 @@ function Profiles() {
         </header>
 
         {
-            learnWeb3NFTs.length && buildSpaceNFTs.length &&
+            learnWeb3NFTs.length && buildSpaceNFTs.length ?
             <NFTCard learnWeb3NFTs={learnWeb3NFTs} buildSpaceNFTs={buildSpaceNFTs} />
+            :
+            <Loader />
         }
     </div>
   )
