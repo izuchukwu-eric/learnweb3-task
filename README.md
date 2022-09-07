@@ -24,7 +24,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 2. Be sure to connect the wallet that owns either a LearnWeb3 or Buildspace NFT.
 
-## Deploy on Vercel
+## Deployed on Vercel
 
 The app is deployed on Vercel
 
