@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["ipfs.io", "tokens.buildspace.so"],
+    domains: ["ipfs.io", "tokens.buildspace.so", "nft-cdn.alchemy.com"],
   },
 }
 
